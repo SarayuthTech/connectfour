@@ -34,7 +34,7 @@ function makeBoard() {
   for (let y = 0; y < HEIGHT; y++) {
     board.push(Array.from({ length: WIDTH }));
   }
-  //take me almost week to figure out. shold have explain this in the first place
+  //take me almost week to figure out. should have explain this in the first place
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
@@ -165,7 +165,11 @@ function checkForWin() {
   // TODO: read and understand this code. Add comments to help you.
 
   for (let y = 0; y < HEIGHT; y++) {
+    //WIDTH-3 for prevent go beyond array limit??//does not work because if click [7,6] not go to for loop
+    //***if still want to use sliding window (with -3) have to seperate for loosp each Horiz,Ver,diagR,digL
+    //*** OR Use IF check boundery IF(X>(WIDTH-3))--> FOR(X<WIDTH-3) elese-->FOR(X<WIDTH)
     for (let x = 0; x < WIDTH; x++) {
+      //WIDTH-3 for prevent go beyound array limit??//does not work because if click last cell not go to forloop
       //check horizontal  if x position have same player all 4 position that player win
       let horiz = [
         [y, x],
